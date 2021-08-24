@@ -1,0 +1,19 @@
+{% extends "base_template.html" %}
+{% block title %} About The Author {% endblock %}
+{% block content %}
+  <h1>Name: {{ author.first_name }} {{ author.last_name}}</h1>
+
+  
+  <p><strong>Bio:</strong> {{ author.bio }}</p>
+
+<br>
+  <div style="margin-left:20px;margin-top:20px">
+    <h4>Articles By Author</h4>
+<ul>
+    <li>{{ author.article }}</a>
+</li>
+</ul>
+</div>    
+{% endblock %}
+
+  <!--  <p><strong>Genre:</strong> {{ book.author.genre.all }}</p>   -->

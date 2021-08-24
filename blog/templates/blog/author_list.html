@@ -1,0 +1,17 @@
+{% extends "base_template.html" %}
+
+{% block title %} Blog Authors {% endblock %}
+{% block content %}
+ {% if author_list %}
+ 	<ul>
+ 	{% for author in author_list %}
+<li>
+ 	  <a href="{{ author.get_absolute_url }}">{{ author.first_name }} {{author.last_name}}</a> {{ article.author.all|length }}
+
+</li>
+{% endfor %}
+</ul>
+{% else %}
+<p> There are no Authors in this blog</p>
+{% endif %}
+{% endblock %}

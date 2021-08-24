@@ -1,0 +1,21 @@
+{% extends "base_template.html" %}
+
+{% block content %}
+  <h1>Latest Blog Post</h1>
+  {% if object_list %}
+  <ul>
+    {% for article in object_list %}
+      <li>
+        <a href="{{ article.get_absolute_url }}" >{{article.title }}</a> <p>
+          {{article.description|truncatechars:70}}</p>
+          By:  {{article.author}} {{article.post_date}}
+          <br>
+          <a class="btn btn-outline-info"  href="{{ article.get_absolute_url }}" > Read More </a>
+      </li>
+      <br>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no blog Post to display.</p>
+  {% endif %}       
+{% endblock %}
